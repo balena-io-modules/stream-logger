@@ -1,0 +1,35 @@
+{
+  "name": "resin-stream-logger",
+  "version": "0.0.1",
+  "description": "Log streams and output in an easy and consistent fashion",
+  "main": "build/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/resin-io-modules/stream-logger.git"
+  },
+  "author": "Cameron Diver <cameron@resin.io>",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/resin-io-modules/stream-logger/issues"
+  },
+  "homepage": "https://github.com/resin-io-modules/stream-logger#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-clean": "^0.3.2",
+    "gulp-mocha": "^4.3.0",
+    "gulp-sourcemaps": "^2.6.0",
+    "gulp-typescript": "^3.1.6",
+    "gulp-util": "^3.0.8",
+    "ts-node": "^3.0.2",
+    "typescript": "^2.2.2"
+  },
+  "dependencies": {
+    "@types/lodash": "^4.14.62",
+    "@types/node": "^7.0.13",
+    "event-stream": "^3.3.4",
+    "lodash": "^4.17.4"
+  }
+}

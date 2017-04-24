@@ -1,3 +1,7 @@
+## v0.0.3
+
+* Include build output [Cameron Diver]
+
 ## v0.0.2
 
 * Change getLogStream -> createLogStream [Cameron Diver]

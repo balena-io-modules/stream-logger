@@ -29,6 +29,8 @@ class StreamLogger {
     createLogStream(prefixName) {
         const self = this;
         return es.pipe(es.split(), es.through(function (data) {
+            if (data == '')
+                return;
             this.emit('data', self.formatWithPrefix(prefixName, data));
         }));
     }

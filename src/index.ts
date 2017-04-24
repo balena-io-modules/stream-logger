@@ -38,6 +38,8 @@ export class StreamLogger {
 		return es.pipe(
 			es.split(),
 			es.through(function(data: string) {
+				if (data == '')
+					return
 				this.emit('data', self.formatWithPrefix(prefixName, data))
 			})
 		)

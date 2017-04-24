@@ -26,7 +26,7 @@ class StreamLogger {
      *	get a stream that when logged to will split up the info by lines,
      *	apply a prefix, and forward it on.
      */
-    getLogStream(prefixName) {
+    createLogStream(prefixName) {
         const self = this;
         return es.pipe(es.split(), es.through(function (data) {
             this.emit('data', self.formatWithPrefix(prefixName, data));
@@ -42,6 +42,6 @@ class StreamLogger {
         return _.max(_.map(this.prefixes, (prefix) => prefix.length));
     }
 }
-exports.default = StreamLogger;
+exports.StreamLogger = StreamLogger;
 
 //# sourceMappingURL=index.js.map

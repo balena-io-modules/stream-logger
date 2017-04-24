@@ -2,7 +2,7 @@ import * as _ from 'lodash'
 
 const es = require('event-stream')
 
-export default class StreamLogger {
+export class StreamLogger {
 
 	private prefixes: { [name: string]: string }
 
@@ -31,7 +31,7 @@ export default class StreamLogger {
 	 *	get a stream that when logged to will split up the info by lines,
 	 *	apply a prefix, and forward it on.
 	 */
-	public getLogStream(prefixName: string)
+	public createLogStream(prefixName: string)
 		: NodeJS.ReadWriteStream {
 
 		const self = this

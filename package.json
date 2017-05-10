@@ -1,11 +1,9 @@
 {
   "name": "resin-stream-logger",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Log streams and output in an easy and consistent fashion",
   "main": "build/index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "types": "src/index.ts",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/resin-io-modules/stream-logger.git"

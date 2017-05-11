@@ -45,7 +45,12 @@ export class StreamLogger {
 		)
 	}
 
-	private formatWithPrefix(name: string, message: string): string {
+	/**
+	 * formatWithPrefix
+	 *	Format a string to send through the stream. This can be used
+	 *	standalone for special situations.
+	 */
+	public formatWithPrefix(name: string, message: string): string {
 		const maxLength = this.getMaxPrefixLength()
 		const prefix = this.prefixes[name]
 		const spaces = _.times(maxLength - prefix.length, _.constant(' ')).join('')

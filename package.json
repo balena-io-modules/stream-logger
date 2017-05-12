@@ -1,6 +1,6 @@
 {
   "name": "resin-stream-logger",
-  "version": "0.0.5",
+  "version": "0.1.0",
   "description": "Log streams and output in an easy and consistent fashion",
   "main": "build/index.js",
   "types": "src/index.ts",

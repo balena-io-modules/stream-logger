@@ -34,6 +34,11 @@ class StreamLogger {
             this.emit('data', self.formatWithPrefix(prefixName, data));
         }));
     }
+    /**
+     * formatWithPrefix
+     *	Format a string to send through the stream. This can be used
+     *	standalone for special situations.
+     */
     formatWithPrefix(name, message) {
         const maxLength = this.getMaxPrefixLength();
         const prefix = this.prefixes[name];

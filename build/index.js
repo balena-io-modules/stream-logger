@@ -40,8 +40,10 @@ class StreamLogger {
      *	standalone for special situations.
      */
     formatWithPrefix(name, message) {
-        const maxLength = this.getMaxPrefixLength();
         const prefix = this.prefixes[name];
+        if (!prefix)
+            throw new Error(`Unknown prefix ${name}`);
+        const maxLength = this.getMaxPrefixLength();
         const spaces = _.times(maxLength - prefix.length, _.constant(' ')).join('');
         return `${prefix}${spaces} ${message}\n`;
     }
@@ -50,5 +52,4 @@ class StreamLogger {
     }
 }
 exports.StreamLogger = StreamLogger;
-
 //# sourceMappingURL=index.js.map

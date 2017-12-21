@@ -37,7 +37,7 @@ export class StreamLogger {
 		const self = this
 		return es.pipe(
 			es.split(),
-			es.through(function(data: string) {
+			es.through(function(this: NodeJS.ReadWriteStream, data: string) {
 				if (data == '')
 					return
 				this.emit('data', self.formatWithPrefix(prefixName, data))
@@ -51,13 +51,15 @@ export class StreamLogger {
 	 *	standalone for special situations.
 	 */
 	public formatWithPrefix(name: string, message: string): string {
-		const maxLength = this.getMaxPrefixLength()
 		const prefix = this.prefixes[name]
+		if (!prefix) throw new Error(`Unknown prefix ${name}`)
+
+		const maxLength = this.getMaxPrefixLength()!
 		const spaces = _.times(maxLength - prefix.length, _.constant(' ')).join('')
 		return `${prefix}${spaces} ${message}\n`
 	}
 
-	private getMaxPrefixLength(): number {
+	private getMaxPrefixLength(): number | undefined {
 		return _.max(_.map(this.prefixes, (prefix) => prefix.length))
 	}
 

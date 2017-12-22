@@ -5,8 +5,7 @@
     "sourceMap": true,
     "types": ["node"],
     "target": "es6",
-    "noImplicitAny": true,
-    "strictNullChecks": true
+    "strict": true
   },
   "include": [
     "src/",

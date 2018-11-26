@@ -4,6 +4,10 @@
   "description": "Log streams and output in an easy and consistent fashion",
   "main": "build/index.js",
   "types": "src/index.ts",
+  "scripts": {
+    "prepare": "npm run build",
+    "build": "gulp"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/resin-io-modules/stream-logger.git"
@@ -27,7 +31,7 @@
   "dependencies": {
     "@types/lodash": "^4.14.62",
     "@types/node": "^7.0.13",
-    "event-stream": "^3.3.4",
+    "event-stream": "3.3.5",
     "lodash": "^4.17.4"
   }
 }
